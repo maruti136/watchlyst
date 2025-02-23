@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 const fetchMovies = async function ({ queryKey }) {
   const [, searchQuery] = queryKey;
   const response = await fetch(
-    `http://www.omdbapi.com/?apikey=3304f6c9&s=${searchQuery}`
+    `https://www.omdbapi.com/?apikey=3304f6c9&s=${searchQuery}`
   );
   return response.json();
 };

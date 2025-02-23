@@ -13,7 +13,7 @@ export default function useFetchUserMovie(userId, movieID) {
 
       // Fetch data from OMDB API
       const movieResponse = await fetch(
-        `http://www.omdbapi.com/?apikey=3304f6c9&i=${searchMovieID}`
+        `https://www.omdbapi.com/?apikey=3304f6c9&i=${searchMovieID}`
       );
       const movieData = await movieResponse.json();
 
