@@ -24,7 +24,7 @@ export default function SearchResultSection({ setMovieID }) {
   const { data, isLoading } = useFetchMovieList(query);
   // sets query state after a delay of 500ms enhancing performance
   const debouncedQuery = debounce((value) => setQuery(value), 500);
-  console.log(data);
+
   return (
     <Section>
       <Div name="search-input">
@@ -51,7 +51,7 @@ export default function SearchResultSection({ setMovieID }) {
       )}
       {!data?.Error && !isLoading && query && (
         <Div name="search-result">
-          {data.Search?.slice(3 * (pageNo - 1), 3 * pageNo).map((item) => (
+          {data?.Search?.slice(3 * (pageNo - 1), 3 * pageNo).map((item) => (
             <Div name="result-item" key={item.imdbID}>
               <Img src={item.Poster} />
               <Div
@@ -73,7 +73,7 @@ export default function SearchResultSection({ setMovieID }) {
       {!data?.Error && !isLoading && query && (
         <Pagination
           pageNo={pageNo}
-          totalPages={Math.ceil(data.Search.length / 3)}
+          totalPages={Math.ceil(data?.Search?.length / 3)}
           setPageNo={setPageNo}
         />
       )}

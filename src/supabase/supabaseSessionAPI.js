@@ -4,7 +4,6 @@ export default async function getAuthenticatedUserAPI() {
   try {
     const { data: activeSession, error: sessionError } =
       await supabase.auth.getSession();
-    console.log(activeSession, sessionError);
     if (sessionError)
       throw new Error(`Supabase session error: ${sessionError.message}`);
 

@@ -13,7 +13,6 @@ export default function ProtectedRoutes({ children }) {
     if (data?.role !== "authenticated" && !isLoading)
       navigate("/login", { replace: true });
   }, [data, isLoading, navigate]);
-  console.log("heyhkjdahsh");
   if (isLoading)
     return (
       <CentreWrapper>

@@ -23,7 +23,6 @@ export default function Login() {
     formState: { errors },
   } = useForm();
 
-  console.log("login", isSuccess);
   const onSubmit = ({ email, password }) => {
     login({ email, password });
   };

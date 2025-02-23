@@ -29,7 +29,6 @@ export default function SideBar({ sectionType, setSectionType, openModal }) {
         <Button
           active={sectionType === "watched"}
           onClick={() => {
-            console.log("set correctly");
             setSectionType("watched");
           }}
         >

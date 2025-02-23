@@ -8,8 +8,6 @@ export default function ProtectedAuthRoutes() {
   const navigate = useNavigate();
   const { data, isLoading } = useCheckAuthorised();
 
-  console.log("protected auth:", data, isLoading);
-
   useEffect(() => {
     if (data && !isLoading) navigate("/home", { replace: true });
   }, [data, isLoading, navigate]);

@@ -15,7 +15,6 @@ export default function useLogin() {
     mutationFn: loginAPI,
     onSuccess: (data) => {
       queryClient.setQueryData(["user"], (oldData) => {
-        console.log(oldData);
         return {
           ...data.user,
         };

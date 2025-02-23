@@ -5,7 +5,6 @@ export default async function fetchUserMoviesAPI(
   columnValues
 ) {
   try {
-    console.log("gwhjghfewh");
     const { data, error } = await supabase
       .from("user_movies")
       .select(selectedColumns)
@@ -13,7 +12,6 @@ export default async function fetchUserMoviesAPI(
       .eq([columnValues.columnTwo[0]], columnValues.columnTwo[1]);
 
     if (error) throw new Error(`Supabase Fetch Error: ${error.message}`);
-    console.log(data, error);
     return data;
   } catch (err) {
     throw new Error(err);
